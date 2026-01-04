@@ -1,29 +1,58 @@
-# Twin Paradox Simulation (Pygame) 🚀
+🚀 Installation and Setup Guide
+This guide will walk you through setting up the environment and running the Twin Paradox Interactive Visualization.
 
-An interactive visualization of relativistic time dilation (the "Twin Paradox") built with Python using the Pygame library.
+1. Prerequisites
+Before you begin, ensure you have Python 3.12 or higher installed on your system. You can download it from python.org.
 
-The program allows you to compare two spaceflight scenarios with different speeds and distances simultaneously, visually demonstrating the difference in time flow on Earth versus on the spaceship.
+2. Setting Up the Project
+Open your terminal (or Command Prompt / PowerShell) and follow these steps:
 
-## 📋 Features
-- **Dual Independent Simulations:** Run two scenarios side-by-side to compare relativistic effects.
-- **Interactive Input:**
-  - Speed ($c$): From 0.1 to 0.9999... (supports a **logarithmic slider** inside the input box for precise high-speed adjustment).
-  - Distance (light-years).
-- **Real-time Unit Conversion:** Automatically converts inputs to km/s, km/h, and millions of km.
-- **Full Flight Cycle:** Visualization includes the outbound trip, the stay at the destination, and the return trip.
-- **Auto-Scaling:** The view automatically adjusts the scale to fit the largest distance on the screen.
-- **Detailed Timers:** Displays time in Years, Days, and Hours:Minutes.
+A. Clone the Repository
+First, download the source code to your local machine:
 
-## 🛠 Tech Stack
-- Python 3.x
-- Pygame
+Bash
 
-## 🚀 How to Run
+git clone https://github.com/forostovych/twin_paradox_simulation.git
+cd twin_paradox_simulation
+B. Create a Virtual Environment (Recommended)
+It is best practice to use a virtual environment to keep dependencies isolated:
 
-1. **Clone the repository** (or download the source code):
-   ```bash
-   git clone https://github.com/forostovych/twin_paradox_simulation.git
+Bash
 
-Install dependencies:Make sure you have Python installed, then run:Bashpip install pygame
-Run the simulation:Bashpython main.py
-🎮 ControlsInput Fields: Click to type values manually, or click and drag the mouse inside the "Speed" box to use the slider.START: Begin the simulation.PAUSE: Pause the simulation.RESET: Reset parameters and return ships to the starting position.Duration (s): Global setting for the animation duration in real-world seconds (controls how fast the ships move across the screen).📚 PhysicsThe simulation uses the Lorentz factor ($\gamma$) to calculate time dilation:$$ \gamma = \frac{1}{\sqrt{1 - \frac{v^2}{c^2}}} $$Time on the spaceship ($t'$) is related to time on Earth ($t$) by the formula:$$ t' = \frac{t}{\gamma} $$
+# Windows
+python -m venv venv
+venv\Scripts\activate
+
+# macOS / Linux
+python3 -m venv venv
+source venv/bin/activate
+C. Install Dependencies
+The simulation requires the pygame library. Install it using pip:
+
+Bash
+
+pip install pygame
+3. Running the Simulation
+Once the installation is complete, launch the application:
+
+Bash
+
+python main.py
+🎮 Interface Features
+🧪 Smart Speed Slider
+The Speed (c) field is not just a text box—it's an interactive logarithmic slider.
+
+Linear Scale (Left): Easily select common speeds (0.1c, 0.5c).
+
+Logarithmic Scale (Right): Precision control for extreme relativistic speeds (e.g., 0.99999999c).
+
+How to use: Simply click and drag your mouse inside the Speed box.
+
+📏 Automatic Scaling
+The simulation automatically adjusts the visual scale of the tracks based on the maximum distance entered. This ensures that whether you travel 4 light-years or 1,000, the journey always fits perfectly on your screen.
+
+⏱️ High-Precision Timers
+The app tracks time down to the minute, converting the theoretical math into a human-readable format: Years, Days, Hours, and Minutes.
+
+📐 The Physics Behind It
+This simulation is based on Einstein's Special Relativity. The primary calculation is the Lorentz Factor
